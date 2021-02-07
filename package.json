@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "deploy": "npx gulp deploy"
   },
   "author": "",
   "license": "ISC",
@@ -23,12 +25,14 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-less": "^4.0.1",
     "gulp-newer": "^1.4.0",
     "gulp-sass": "^4.1.0",
     "gulp-scss": "^1.4.0",
     "gulp-uglify-es": "^2.0.0",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "npx": "^10.2.2"
   }
 }

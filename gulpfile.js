@@ -11,6 +11,7 @@ const cleancss = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const del = require('del');
+const connect = require('gulp-connect');
 
 // Определяем логику работы Browsersync
 function browsersync() {
@@ -92,6 +93,15 @@ function startwatch() {
   // Мониторим папку-источник изображений и выполняем images(), если есть изменения
   watch('app/img/src/**/*', images);
 }
+
+function deploy() {
+  connect.server({
+    root: 'dist',
+    livereload: false,
+  });
+}
+
+exports.deploy = deploy;
 
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
 exports.browsersync = browsersync;
