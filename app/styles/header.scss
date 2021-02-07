@@ -1,0 +1,65 @@
+@import 'app/styles/variables';
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background: #ffffff;
+  //   border-top: 1px solid $main-yellow;
+  padding: 10px;
+  border-bottom: 1px solid $main-yellow;
+  box-shadow: 0 0 5px 0px $main-yellow;
+
+  &__logo {
+    flex: 0 0 auto;
+  }
+
+  &__menu {
+    flex: 1 1 100%;
+  }
+
+  &__contacts {
+    flex: 0 0 auto;
+  }
+
+  &__container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+}
+
+.main-nav {
+  text-align: right;
+
+  &__link {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: $text-color;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 0;
+      background: $main-yellow;
+      transition: width ease 0.3s;
+    }
+
+    &:hover {
+      color: $main-yellow;
+
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}

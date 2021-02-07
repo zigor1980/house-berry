@@ -1,0 +1,44 @@
+@import 'app/styles/variables';
+@import 'app/styles/mixins';
+
+.services {
+  &__row {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &-card {
+    flex: 1 0 300px;
+    max-width: 300px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    padding-top: 50px;
+    margin: 5px;
+    margin-top: 50px;
+    box-shadow: 0px 2px 5px 0px $main-gray;
+
+    &__caption {
+      font-size: 18px;
+      text-align: center;
+    }
+
+    &:before {
+      content: '';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      @include wh(80px);
+      background: $main-yellow;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+}

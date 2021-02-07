@@ -1,0 +1,18 @@
+@import 'app/styles/reset';
+@import 'app/styles/variables';
+@import 'app/styles/fonts.scss';
+@import 'app/styles/common.scss';
+@import 'app/styles/header.scss';
+@import 'app/styles/intro.scss';
+@import 'app/styles/services.scss';
+@import 'app/styles/examples.scss';
+
+body {
+  font-family: $font-family;
+  font-size: 16px;
+  color: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,99 @@
+@import 'app/styles/variables';
+@import 'app/styles/mixins';
+
+.examples-gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  &__card {
+    flex: 1 1 calc(33% - 2px);
+    margin: 2px;
+    max-width: calc(33% - 2px);
+    min-height: 200px;
+    background: #000000;
+    position: relative;
+
+    @media screen and (max-width: 625px) {
+      flex: 1 1 calc(50% - 5px);
+      max-width: calc(50% - 5px);
+    }
+
+    @media screen and (max-width: 400px) {
+      flex: 1 1 100%;
+      margin: 0;
+      margin-bottom: 5px;
+      max-width: 100%;
+    }
+  }
+}
+
+.examples-card {
+  @media screen and (min-width: 768px) {
+    &:hover {
+      .examples-card__info {
+        transform: translateY(100%);
+        box-shadow: none;
+      }
+
+      .examples-card__overlay {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  cursor: pointer;
+
+  &_1 {
+    background-image: url('../img/dest/gallery/preview-1.jpg');
+  }
+  &_2 {
+    background-image: url('../img/dest/gallery/preview-2.jpg');
+  }
+  &_3 {
+    background-image: url('../img/dest/gallery/preview-3.jpg');
+  }
+  &_4 {
+    background-image: url('../img/dest/gallery/preview-4.jpg');
+  }
+  &_5 {
+    background-image: url('../img/dest/gallery/preview-5.jpg');
+  }
+  &_6 {
+    background-image: url('../img/dest/gallery/preview-6.jpg');
+  }
+
+  &__overlay {
+    position: absolute;
+    @include wh(100%);
+    background-color: rgba($color: $main-gray, $alpha: 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition-property: opacity visibility;
+    transition-delay: 0.1s;
+    transition-timing-function: linear;
+    transition-duration: 0.3s;
+    will-change: opacity visibility;
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 0;
+    font-family: 'RobotoBold';
+    font-size: 18px;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    background-color: $main-yellow;
+    box-shadow: 0 0 5px 5px $main-yellow;
+    transition-property: transform box-shadow;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+    will-change: transform box-shadow;
+  }
+}

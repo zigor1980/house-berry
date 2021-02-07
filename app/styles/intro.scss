@@ -1,0 +1,36 @@
+@import 'app/styles/variables';
+
+.intro {
+  margin-top: 70px;
+  background: url('/img/dest/intro-bg.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__container {
+    padding: 100px 5px;
+  }
+
+  &__content {
+    padding: 30px;
+    max-width: 700px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: #ffffff;
+    font-family: 'RobotoBold';
+    box-shadow: 0 0 10px 0 #ffffff;
+  }
+
+  &__description {
+    color: $main-gray;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-size: 40px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+}
