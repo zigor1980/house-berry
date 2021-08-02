@@ -1,11 +1,19 @@
 @import 'app/styles/variables';
 @import 'app/styles/mixins';
 
+@mixin bg($name, $imageUrl) {
+  &_#{$name} {
+    &:before {
+      background-image: url($imageUrl);
+    }
+  }
+}
+
 .services {
   &__row {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-around;
   }
 
@@ -15,16 +23,45 @@
     position: relative;
     background: #ffffff;
     border-radius: 5px;
-    padding: 10px;
+    padding: 15px;
     padding-top: 50px;
     margin: 5px;
     margin-top: 50px;
     box-shadow: 0px 2px 5px 0px $main-gray;
 
+    &__list-item {
+      margin-bottom: 5px;
+      padding-left: 20px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 6px;
+        @include wh(10px, 2px);
+        background: $main-yellow;
+        font-weight: 800;
+        content: '';
+        display: block;
+      }
+    }
+
     &__caption {
       font-size: 18px;
       text-align: center;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
+
+    @include bg('build', '../img/dest/build.jpg');
+    @include bg('electricity', '../img/dest/bulb.jpg');
+    @include bg('roof', '../img/dest/roof.jpg');
+    @include bg('good', '../img/dest/good.jpg');
+    @include bg('water', '../img/dest/water.jpg');
+    @include bg('repair', '../img/dest/repair.jpg');
+    @include bg('sand', '../img/dest/sand.jpg');
+    @include bg('outside', '../img/dest/outside.jpg');
+    @include bg('inner', '../img/dest/inner.jpg');
 
     &:before {
       content: '';
@@ -35,8 +72,14 @@
       top: -40px;
       left: 50%;
       transform: translateX(-50%);
+      box-sizing: border-box;
+      border: 5px solid $main-yellow;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
       @include wh(80px);
-      background: $main-yellow;
+      background-color: $main-yellow;
       border-radius: 50%;
       overflow: hidden;
     }

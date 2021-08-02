@@ -1,4 +1,22 @@
 @import 'app/styles/variables';
+@import 'app/styles/mixins';
+
+.nav {
+  &__item {
+    text-decoration: none;
+    cursor: pointer;
+    color: #000000;
+    display: inline-block;
+    margin: 5px;
+    font-size: 18px;
+    border-bottom: 1px solid transparent;
+    padding: 5px;
+
+    &:hover {
+      border-color: $main-yellow;
+    }
+  }
+}
 
 .header {
   position: fixed;
@@ -12,12 +30,86 @@
   border-bottom: 1px solid $main-yellow;
   box-shadow: 0 0 5px 0px $main-yellow;
 
-  &__logo {
+  &__button-nav {
+    @include wh(40px);
+    border: 1px solid $main-yellow;
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+    line-height: 0;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      margin: auto;
+      vertical-align: middle;
+      background: #000000;
+      @include wh(90%, 2px);
+      box-shadow: 0 5px 0 0 #000000, 0 -5px 0 0 #000000;
+    }
+
+    @media screen and (min-width: 650px) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    @media screen and (max-width: 650px) {
+      display: none;
+    }
+
+    &_mobile {
+      visibility: hidden;
+      opacity: 0;
+      text-align: center;
+      background: #ffffff;
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 0;
+      width: 100%;
+      transition-property: visibility opacity;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+      border-bottom: 1px solid $main-yellow;
+
+      &_visible {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      @media screen and (min-width: 650px) {
+        display: none;
+      }
+    }
+  }
+
+  &__phone-block {
     flex: 0 0 auto;
   }
 
-  &__menu {
-    flex: 1 1 100%;
+  .button {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    flex: 0 0 200px;
+    max-width: 200px;
+
+    img {
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 500px) {
+      flex: 0 0 50px;
+      max-width: 50px;
+    }
+  }
+
+  &__phone {
+    flex: 0 0 auto;
   }
 
   &__contacts {
@@ -28,38 +120,25 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    justify-content: space-between;
   }
-}
 
-.main-nav {
-  text-align: right;
+  .phone-block {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
 
-  &__link {
-    box-sizing: border-box;
-    display: inline-block;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: $text-color;
-    position: relative;
-
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 1px;
-      width: 0;
-      background: $main-yellow;
-      transition: width ease 0.3s;
-    }
-
-    &:hover {
-      color: $main-yellow;
-
-      &:after {
-        width: 100%;
+    @media screen and (max-width: 768px) {
+      .phone-block__phone {
+        font-size: 12px;
       }
+
+      .socials__item {
+        transform: scale(0.5);
+      }
+
+      flex-flow: column nowrap;
     }
   }
 }

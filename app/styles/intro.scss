@@ -2,12 +2,57 @@
 
 .intro {
   margin-top: 70px;
-  background: url('/img/dest/intro-bg.jpg') no-repeat;
-  background-position: center;
-  background-size: cover;
+
+  &__slider {
+
+
+  }
+
+  div.intro__slide {
+    min-height: 650px;
+
+    @media screen and (max-width: 1024px) {
+      min-height: 500px;
+    }
+
+    @media screen and (max-width: 768px) {
+      min-height: 300px;
+    }
+  }
+
+  &__slide {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    &--1 {
+      background-image: url("/img/dest/main/build.jpeg") ;
+    }
+
+    &--2 {
+      background-image: url("/img/dest/main/eletric.jpeg") ;
+    }
+
+    &--3 {
+      background-image: url("/img/dest/main/outside.jpeg") ;
+    }
+
+    &--4 {
+      background-image: url("/img/dest/main/roof.jpeg") ;
+    }
+
+    &--5 {
+      background-image: url("/img/dest/main/sand.jpeg") ;
+    }
+  }
 
   &__container {
     padding: 100px 5px;
+
+    @media screen and (max-width: 768px) {
+      padding: 50px 5px;
+    }
   }
 
   &__content {
@@ -18,11 +63,20 @@
     background: #ffffff;
     font-family: 'RobotoBold';
     box-shadow: 0 0 10px 0 #ffffff;
+
+    @media screen and (max-width: 500px) {
+      padding: 15px;
+    }
   }
 
   &__description {
     color: $main-gray;
     margin-bottom: 15px;
+    line-height: 1.5;
+
+    @media screen and (max-width: 500px) {
+      font-size: 12px;
+    }
   }
 
   &__title {
@@ -31,6 +85,10 @@
 
     @media screen and (max-width: 768px) {
       font-size: 24px;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 18px;
     }
   }
 }

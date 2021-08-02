@@ -1,5 +1,98 @@
+@import 'app/styles/variables';
+@import 'app/styles/mixins';
+
 .work-flow {
   &__container {
     padding: 30px 5px;
+  }
+}
+
+.flow-step {
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__step {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 2px 5px 0px $main-gray;
+    font-size: 16px;
+    flex: 1 1 30%;
+    max-width: 30%;
+    margin: 15px;
+    text-align: center;
+
+    @media screen and (max-width: 910px) {
+      flex-basis: 35%;
+      max-width: 35%;
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-basis: calc(45% - 30px);
+      max-width: calc(45% - 30px);
+    }
+
+    @media screen and (max-width: 620px) {
+      flex-basis: 100%;
+      max-width: 70%;
+    }
+
+    > span {
+      flex: 1 1 100%;
+    }
+
+    &:nth-child(1) {
+      &:before {
+        background-image: url('../img/dest/step-1.png');
+      }
+    }
+
+    &:nth-child(2) {
+      &:before {
+        background-image: url('../img/dest/step-2.png');
+      }
+    }
+
+    &:nth-child(3) {
+      &:before {
+        background-image: url('../img/dest/step-3.png');
+      }
+    }
+
+    &:nth-child(4) {
+      &:before {
+        background-image: url('../img/dest/step-4.png');
+      }
+    }
+
+    &:nth-child(5) {
+      &:before {
+        background-image: url('../img/dest/step-5.png');
+      }
+    }
+
+    &:nth-child(6) {
+      &:before {
+        background-image: url('../img/dest/step-6.png');
+      }
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      flex: 0 0 auto;
+      margin-right: 20px;
+      @include wh(80px);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
   }
 }

@@ -2,157 +2,465 @@
 <html lang="en">
  
 <head>
- 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/app.min.css">
+    <link rel="shortcut icon" href="img/dest/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HouseBerry - Строительство и реконструкция</title>
+    <link rel="stylesheet" href="css/app.min.css">
+    <link rel="stylesheet" href="css/fm.revealator.jquery.min.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
     <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
-
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+        ym(72958204, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-202634019-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-202634019-1');
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/72958204" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
  
 <body>
     <section id="header" class="header">
         <div class="container header__container">
-            <img class="header__logo"width="150" src="img/dest/main-logo.png" alt="HouseBerry"></img>
-            <nav class="header__menu main-nav">
-                <a class="main-nav__link" href="#">О компании</a> 
-                <a class="main-nav__link" href="#">Примеры работ</a> 
-                <a class="main-nav__link" href="#">Цены</a> 
-                <a class="main-nav__link" href="#">Контакты</a>
+            <nav class="header__nav_mobile">
+                <a class="nav__item scroll-to" href="#about">О нас</a> 
+                <a class="nav__item scroll-to" href="#services">Услуги</a> 
+                <a class="nav__item scroll-to" href="#examples">Портфолио</a> 
             </nav>
-            <div class="header__contacts"></div>
+            <picture class="header__logo">
+                <source srcset="img/dest/main-logo.png" media="(min-width: 500px)">
+                <img src="img/dest/small-logo.png" alt="" />
+            </picture>
+            <nav class="header__nav nav">
+                <a class="nav__item scroll-to" href="#about">О нас</a> 
+                <a class="nav__item scroll-to" href="#services">Услуги</a>
+                <!-- <a class="nav__item scroll-to" href="#prices">Цены</a>  -->
+                <a class="nav__item scroll-to" href="#examples">Портфолио</a> 
+            </nav>
+            <div class="header__phone-block phone-block">
+                <div>
+                    <p>
+                        <a href="tel:+375292847995" class="phone-block__phone">+375292847995</a>
+                    </p>
+                </div>
+            </div>
+            <button id="header-menu" type="button" class="header__button-nav"></button>
         </div>
     </section>
-    <section id="intro" class="intro">
-        <div class="container intro__container">
-            <div class="intro__content">
-                <h1 class="intro__title">Строительство, ремонт и монтажные работы.</h1>
-                <p class="intro__description">Бригады строителей из Рб выполнит работы любой сложности <br/> качественно, в срок и по хорошей цене</p>
+    <section id="intro" class="intro section">
+        <div class="intro__slider">
+            <div class="intro__slide intro__slide--1">
+                <div class="container intro__container">
+                    <div class="intro__content">
+                        <h1 class="intro__title">Строительство и реконструкция домов под ключ</h1>
+                        <p class="intro__description">Бригады строителей из РБ выполнят работы любой сложности <br/> качественно, в срок и по хорошей цене</p>
+                        <a href="#response" class="button scroll-to" data-target-scroll="response">Заказать расчет</a>        
+                    </div>
+                </div>
+            </div>
+            <div class="intro__slide intro__slide--2">
+                <div class="container intro__container">
+                    <div class="intro__content">
+                        <h1 class="intro__title">Электрика</h1>
+                        <p class="intro__description">Бригады строителей из РБ выполнят работы любой сложности <br/> качественно, в срок и по хорошей цене</p>
+                        <a href="#response" class="button scroll-to" data-target-scroll="response">Заказать расчет</a>        
+                    </div>
+                </div>
+            </div>
+            <div class="intro__slide intro__slide--3">
+                <div class="container intro__container">
+                    <div class="intro__content">
+                        <h1 class="intro__title">Отделка фасадов</h1>
+                        <p class="intro__description">Бригады строителей из РБ выполнят работы любой сложности <br/> качественно, в срок и по хорошей цене</p>
+                        <a href="#response" class="button scroll-to" data-target-scroll="response">Заказать расчет</a>        
+                    </div>
+                </div>
+            </div>
+            <div class="intro__slide intro__slide--4">
+                <div class="container intro__container">
+                    <div class="intro__content">
+                        <h1 class="intro__title">Кровля</h1>
+                        <p class="intro__description">Бригады строителей из РБ выполнят работы любой сложности <br/> качественно, в срок и по хорошей цене</p>
+                        <a href="#response" class="button scroll-to" data-target-scroll="response">Заказать расчет</a>        
+                    </div>
+                </div>
+            </div>
+            <div class="intro__slide intro__slide--5">
+                <div class="container intro__container">
+                    <div class="intro__content">
+                        <h1 class="intro__title">Абразивно-струйная шлифовка древесины</h1>
+                        <p class="intro__description">Бригады строителей из РБ выполнят работы любой сложности <br/> качественно, в срок и по хорошей цене</p>
+                        <a href="#response" class="button scroll-to" data-target-scroll="response">Заказать расчет</a>        
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section id="services" class="services grayed">
+    <section id="about" class="about section">
+        <div class="container container_content about__container">
+            <h2 class="secondary-caption"><a class="anchor" href="#about">О нас</a></h2>
+            <div class="about__description">
+                <p>
+                    Наша команда «Houseberry» предлагает широкий перечень строительных услуг на всех этапах строительства, а также комплексные решения под ключ. 
+                    Наши специалисты грамотно и качественно организуют полный цикл ремонтно-строительных работ
+                </p>
+                <p>
+                    Houseberry – это команда опытных специалистов, имеющих большой опыт работы в сфере строительства и ремонта.Основные принципы работы нашей команды– это повышенное внимание к потребностям, желаниям и ожиданиям наших клиентов.Стремление достигнуть полного взаимопонимания и доверия.
+                    Мы выполняем поставленные задачи качественно, оперативно и строго в оговоренные сроки.
+                    Возьмемся за любую, даже самую сложную работу и выполним ее безупречно
+                </p>
+                <p>
+                    Выбирая Houseberry , можете быть уверены: мы не только построим дом вашей мечты, но и минимализируем ваши финансовые затраты.
+                    Сотрудничать с нами выгодно и легко
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services grayed section">
         <div class="container container_content services__container">
-            <h2 class="secondary-caption"><span>Какие работы мы выполняем</span></h2>
+            <h2 class="secondary-caption"><a class="anchor" href="#services">Какие работы мы выполняем</a></h2>
             <div class="services__row">
-                <div class="services-card">
+                <div class="services-card services-card_build revealator-slideright revealator-delay1 revealator-once">
                     <h3 class="services-card__caption">Строительство</h3>
                     <p class="services-card__description"></p>
                     <ul class="services-card__list">
-                        <li class="services-card__list-item"></li>
+                        <li class="services-card__list-item">Дома из бруса</li>
+                        <li class="services-card__list-item">Бани из бруса</li>
+                        <li class="services-card__list-item">Каркасные дома</li>
+                        <li class="services-card__list-item">Дома из sip панелей</li>
+                        <li class="services-card__list-item">Дома из блоков</li>
                     </ul>
                 </div>
-                <div class="services-card">
-                    <h3 class="services-card__caption">Ремонт</h3>
-                    <p class="services-card__description"></p>
-                    <ul class="services-card__list">
-                        <li class="services-card__list-item"></li>
-                    </ul>
-                </div>
-                <div class="services-card">
-                    <h3 class="services-card__caption">Благоустройство</h3>
-                    <p class="services-card__description"></p>
-                    <ul class="services-card__list">
-                        <li class="services-card__list-item"></li>
-                    </ul>
-                </div>
-
-                <div class="services-card">
-                    <h3 class="services-card__caption">Отопление</h3>
-                    <p class="services-card__description"></p>
-                    <ul class="services-card__list">
-                        <li class="services-card__list-item"></li>
-                    </ul>
-                </div>
-                <div class="services-card">
+                <div class="services-card services-card_electricity revealator-slideright revealator-delay2 revealator-once">
                     <h3 class="services-card__caption">Электрика</h3>
                     <p class="services-card__description"></p>
                     <ul class="services-card__list">
-                        <li class="services-card__list-item"></li>
+                        <li class="services-card__list-item">Замена старой проводки</li>
+                        <li class="services-card__list-item">Монтаж электрического щита</li>
+                        <li class="services-card__list-item">Установка и замена розеток и включателей</li>
+                        <li class="services-card__list-item">Тёплые полы</li>
+                        <li class="services-card__list-item">Внутреннее и наружное освещение </li>
                     </ul>
                 </div>
-                <div class="services-card">
+                <div class="services-card services-card_roof revealator-slideright revealator-delay1 revealator-once">
+                    <h3 class="services-card__caption">Кровля</h3>
+                    <p class="services-card__description"></p>
+                    <ul class="services-card__list">
+                        <li class="services-card__list-item">Черепица</li>
+                        <li class="services-card__list-item">Мягкая кровля</li>
+                        <li class="services-card__list-item">Фальцевая кровля</li>
+                        <li class="services-card__list-item">Композитная черепица</li>
+                        <li class="services-card__list-item">Ондулин и множество других</li>
+                    </ul>
+                </div>
+                <div class="services-card services-card_repair revealator-slideright revealator-delay2 revealator-once">
+                    <h3 class="services-card__caption">Ремонт</h3>
+                    <p class="services-card__description"></p>
+                    <ul class="services-card__list">
+                        <li class="services-card__list-item">Укрепление несущей конструкции</li>
+                        <li class="services-card__list-item">Ремонт фундамента</li>
+                        <li class="services-card__list-item">Замена венцов</li>
+                        <li class="services-card__list-item">Замена, укрепление перегородки</li>
+                        <li class="services-card__list-item">Замена, укрепление перекрытия</li>
+                        <li class="services-card__list-item">Ремонт или полная замена кровли</li>
+                        <li class="services-card__list-item">Восстановление домов после пожара</li>
+                    </ul>
+                </div>
+                <div class="services-card services-card_good revealator-slideright revealator-delay3 revealator-once">
+                    <h3 class="services-card__caption">Благоустройство</h3>
+                    <p class="services-card__description"></p>
+                    <ul class="services-card__list">
+                        <li class="services-card__list-item">Беседки</li>
+                        <li class="services-card__list-item">Гаражи и навесы</li>
+                        <li class="services-card__list-item">Теплицы</li>
+                        <li class="services-card__list-item">Хозяйственны постройки</li>
+                        <li class="services-card__list-item">Откатные ворота</li>
+                        <li class="services-card__list-item">Установка заборов</li>
+                        <li class="services-card__list-item">Укладка тротуарной плитки</li>
+                        <li class="services-card__list-item">Декоративные колодцы</li>
+                        <li class="services-card__list-item">Возведение габионов</li>
+                    </ul>
+                </div>
+                <div class="services-card services-card_sand revealator-slideright revealator-delay1 revealator-once">
+                    <h3 class="services-card__caption">Абразивно-струйная шлифовка древесины</h3>
+                    <p class="services-card__description"></p>
+                    <ul class="services-card__list">
+                        <li class="services-card__list-item">Шлифовка эксцентриковыми машинками</li>
+                        <li class="services-card__list-item">Обработка при помощи угловых шлифовальных машинок</li>
+                        <li class="services-card__list-item">Абразивно-струйная бесконтактная обработка</li>
+                        <li class="services-card__list-item">Покраска и обработка антисептиком обработаной поверхности</li>
+                    </ul>
+                </div>
+                <div class="services-card services-card_outside revealator-slideright revealator-delay2 revealator-once">
+                    <h3 class="services-card__caption">Отделка фасадов</h3>
+                    <p class="services-card__description"></p>
+                    <ul class="services-card__list">
+                        <li class="services-card__list-item">Фасад из блок-хауса</li>
+                        <li class="services-card__list-item">Фасад из сайдинга</li>
+                        <li class="services-card__list-item">Фасад из клинкерной плитки</li>
+                        <li class="services-card__list-item">Фасад из панелей</li>
+                        <li class="services-card__list-item">Отделка фасада деревом (вагонка, имитация бруса, планкен)</li>
+                    </ul>
+                </div>
+                <div class="services-card services-card_water revealator-slideright revealator-delay3 revealator-once">
                     <h3 class="services-card__caption">Сантехника и канализация</h3>
                     <p class="services-card__description"></p>
                     <ul class="services-card__list">
-                        <li class="services-card__list-item"></li>
+                        <li class="services-card__list-item">Установка водонагревателя</li>
+                        <li class="services-card__list-item">Монтаж сантехнической точки</li>
+                        <li class="services-card__list-item">Установка радиаторов отопления</li>
+                        <li class="services-card__list-item">Установка ванны, раковины, душевой кабины, унитаза и биде</li>
+                        <li class="services-card__list-item">стройство врезок в действующий водопровод, канализацию</li>
+                    </ul>
+                </div>
+                <div class="services-card services-card_inner revealator-slideright revealator-delay3 revealator-once">
+                    <h3 class="services-card__caption">Внутренняя отделка</h3>
+                    <p class="services-card__description"></p>
+                    <ul class="services-card__list">
+                        <li class="services-card__list-item">Монтаж вагонки, имитации бруса, гипсокартона, шпунта</li>
+                        <li class="services-card__list-item">Отделка штукатуркой</li>
+                        <li class="services-card__list-item">Укладка ламината</li>
+                        <li class="services-card__list-item">Укладка паркетной доски</li>
+                        <li class="services-card__list-item">Укладка плитка</li>
+                        <li class="services-card__list-item">Монтаж дверей, окон. Установка наличников и подоконников</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <section id="examples" class="examples ">
+    <!--
+    <section id="prices" class="prices section">
+        <div class="container container_content prices__container">
+            <h2 class="secondary-caption"><a class="anchor" href="#prices">Расценки работ по строительству</a></h2>
+            <p class="prices__description">
+                Наши работы ценят за качество и долговечность. 
+                Стоимость работ оценивается индивидуально и может меняться в зависимости от сложности. 
+                Пожалуйста, уточняйте итоговую стоимость
+            </p>
+            <div class="prices__table-container">
+                <table class="prices__table">
+                    <thead><th>Наименование услуги</th><th>Стоимость</th></thead>
+                    <tbody>
+                        <tr><td>Дома из бруса</td><td>от 3500 руб/м<sup>2</sup></td></tr>
+                        <tr><td>Бани из бруса</td><td>от 3000 руб/м<sup>2</sup></td></tr>
+                        <tr><td>Замена старой проводки</td><td>от 1000 руб</td></tr>
+                        <tr><td>Внутреннее и наружное освещение</td><td>от 500 руб</td></tr>
+                        <tr><td>Кровля из черепицы</td><td>от 1300 руб/м2</td></tr>
+                        <tr><td>Мягкая кровля</td><td>от 1500 руб/м2</td></tr>
+                        <tr><td>Укрепление несущей конструкции</td><td>от 500 руб</td></tr>
+                        <tr><td>Ремонт фундамента</td><td>от 3500 руб</td></tr>
+                        <tr><td>Замена венцов</td><td>от 4000 руб</td></tr>
+                        <tr><td>Беседки</td><td>от 3000 руб</td></tr>
+                        <tr><td>Гаражы и навесы</td><td>от 7000 руб</td></tr>
+                        <tr><td>Теплицы</td><td>от 5000 руб</td></tr>
+                        <tr><td>Шлифовка эксцентриковыми машинками</td><td>от 250 руб/м2</td></tr>
+                        <tr><td>Абразивно-струйная бесконтактная обработка</td><td>от 250 руб/м2</td></tr>
+                        <tr><td>Покраска и обработка септиком</td><td>от 100 руб/м2</td></tr>
+                        <tr><td>Фасады из блок-хауса</td><td>от 450 руб/м2</td></tr>
+                        <tr><td>Фасады из сайдинга</td><td>от 200 руб/м2</td></tr>
+                        <tr><td>Установка водонагревателя</td><td>от 800 руб</td></tr>
+                        <tr><td>Монтаж сантехнической точки</td><td>от 500 руб</td></tr>
+                        <tr><td>Установка радиаторов</td><td>от 600 руб</td></tr>
+                        <tr><td>Монтаж вагонки/иммитации бруса/гипсокартона/шпунта</td><td>от 350 руб/м2</td></tr>
+                        <tr><td>Отделка штукатуркой</td><td>от 400 руб/м2</td></tr>
+                        <tr><td>Укладка ламината</td><td>от 250 руб/м2</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="prices__description">Чтобы получить полный перечень работ и их стоимость, оставьте заявку или напишите нам в мессенджерах</p>
+            <a href="#response" class="button scroll-to" data-target-scroll="response">Получить полный перечень услуг</a> 
+        </div>
+    </section>
+    -->
+    <section id="examples" class="examples section">
         <div class="container container_content examples__container">
-            <h2 class="secondary-caption"><span>Примеры выполненых работ </span></h2>
+            <h2 class="secondary-caption"><a class="anchor" href="#examples">Примеры выполненых работ </a></h2>
             <div class="examples-gallery">
                 <div class="examples-gallery__card examples-card examples-card_1">
-                    <div class="examples-card__info">Пескоструйная обработка</div>
-                    <div class="examples-card__overlay">
-                        <div style="display: none;">
-                            <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-1.jpg"></a>
-                            <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-2.jpg"></a>
-                            <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-3.jpg"></a>
-                            <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-4.jpg"></a>
-                            <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-5.jpg"></a>
-                        </div>
+                    <div class="examples-card__info">Абразивно-струйная шлифовка древесины</div>
+                    <div class="examples-card__overlay"></div>
+                    <div style="display: none;">
+                        <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-1.jpg"></a>
+                        <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-2.jpg"></a>
+                        <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-3.jpg"></a>
+                        <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-4.jpg"></a>
+                        <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-5.jpg"></a>
+                        <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-6.jpg"></a>
+                        <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-7.jpg"></a>
+                        <a rel="gallery-1" class="type-pic-wide" href="img/dest/gallery/gallery-1-8.jpg"></a>
                     </div>
                 </div>
                 <div class="examples-gallery__card examples-card examples-card_2">
                     <div class="examples-card__info">Фундамент</div>
-                    <div class="examples-card__overlay">
-                        <div style="display: none;">
-                            <a rel="gallery-2" class="type-pic-wide" href="img/dest/gallery/gallery-2-1.jpg"></a>
-                            <a rel="gallery-2" class="type-pic-wide" href="img/dest/gallery/gallery-2-2.jpg"></a>
-                            <a rel="gallery-2" class="type-pic-wide" href="img/dest/gallery/gallery-2-3.jpg"></a>
-                            <a rel="gallery-2" class="type-pic-wide" href="img/dest/gallery/gallery-2-4.jpg"></a>
-                        </div>
+                    <div class="examples-card__overlay"></div>
+                    <div style="display: none;">
+                        <a rel="gallery-2" class="type-pic-wide" href="img/dest/gallery/gallery-2-1.jpg"></a>
+                        <a rel="gallery-2" class="type-pic-wide" href="img/dest/gallery/gallery-2-2.jpg"></a>
+                        <a rel="gallery-2" class="type-pic-wide" href="img/dest/gallery/gallery-2-3.jpg"></a>
+                        <a rel="gallery-2" class="type-pic-wide" href="img/dest/gallery/gallery-2-4.jpg"></a>
                     </div>
                 </div>
                 <div class="examples-gallery__card examples-card examples-card_3">
                     <div class="examples-card__info">Внутренняя отделка</div>
-                    <div class="examples-card__overlay">
-                        <div style="display: none;">
-                            <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-1.jpg"></a>
-                            <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-2.jpg"></a>
-                            <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-3.jpg"></a>
-                            <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-4.jpg"></a>
-                            <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-5.jpg"></a>
-                        </div>
+                    <div class="examples-card__overlay"></div>
+                    <div style="display: none;">
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-1.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-2.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-3.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-4.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-5.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-6.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-7.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-8.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-9.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-10.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-11.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-12.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-13.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-14.jpg"></a>
+                        <a rel="gallery-3" class="type-pic-wide" href="img/dest/gallery/gallery-3-15.jpg"></a>
                     </div>
                 </div>
-                <div class="examples-gallery__card examples-card">
-                    <div class="examples-card__info">Дом из бруса</div>
+                <div class="examples-gallery__card examples-card examples-card_4">
+                    <div class="examples-card__info">Дом из профилированного бруса</div>
                     <div class="examples-card__overlay"></div>
+                    <div style="display: none;">
+                        <a rel="gallery-4" class="type-pic-wide" href="img/dest/gallery/gallery-4-1.jpg"></a>
+                        <a rel="gallery-4" class="type-pic-wide" href="img/dest/gallery/gallery-4-2.jpg"></a>
+                        <a rel="gallery-4" class="type-pic-wide" href="img/dest/gallery/gallery-4-3.jpg"></a>
+                        <a rel="gallery-4" class="type-pic-wide" href="img/dest/gallery/gallery-4-4.jpg"></a>
+                        <a rel="gallery-4" class="type-pic-wide" href="img/dest/gallery/gallery-4-5.jpg"></a>
+                        <a rel="gallery-4" class="type-pic-wide" href="img/dest/gallery/gallery-4-6.jpg"></a>
+                    </div>
                 </div>
-                <div class="examples-gallery__card examples-card">
-                    <div class="examples-card__info">Дом из бруса</div>
+                <div class="examples-gallery__card examples-card examples-card_5">
+                    <div class="examples-card__info">Каркасные дома</div>
                     <div class="examples-card__overlay"></div>
+                    <div style="display: none;">
+                        <a rel="gallery-5" class="type-pic-wide" href="img/dest/gallery/gallery-5-1.jpg"></a>
+                        <a rel="gallery-5" class="type-pic-wide" href="img/dest/gallery/gallery-5-2.jpg"></a>
+                        <a rel="gallery-5" class="type-pic-wide" href="img/dest/gallery/gallery-5-3.jpg"></a>
+                        <a rel="gallery-5" class="type-pic-wide" href="img/dest/gallery/gallery-5-4.jpg"></a>
+                        <a rel="gallery-5" class="type-pic-wide" href="img/dest/gallery/gallery-5-5.jpg"></a>
+                    </div>
                 </div>
-                <div class="examples-gallery__card examples-card">
-                    <div class="examples-card__info">Дом из бруса</div>
+                <div class="examples-gallery__card examples-card examples-card_6">
+                    <div class="examples-card__info">Кровля</div>
                     <div class="examples-card__overlay"></div>
+                    <div style="display: none;">
+                        <a rel="gallery-6" class="type-pic-wide" href="img/dest/gallery/gallery-6-1.jpg"></a>
+                        <a rel="gallery-6" class="type-pic-wide" href="img/dest/gallery/gallery-6-2.jpg"></a>
+                        <a rel="gallery-6" class="type-pic-wide" href="img/dest/gallery/gallery-6-3.jpg"></a>
+                        <a rel="gallery-6" class="type-pic-wide" href="img/dest/gallery/gallery-6-4.jpg"></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="work-flow" class="work-flow grayed">
+    <section id="work-flow" class="work-flow grayed section">
         <div class="container container_content work-flow__container">
-            <h2 class="secondary-caption"><span>Как мы работаем</span></h2>
+            <h2 class="secondary-caption"><a class="anchor" href="#work-flow">Как мы работаем</a></h2>
+            <ul class="flow-step__list">
+                <li class="flow-step__step revealator-slideleft revealator-delay1 revealator-once"><span>Консультация <br/> по телефону</span></li>
+                <li class="flow-step__step revealator-slideleft revealator-delay2 revealator-once"><span>Выезд на обьект <br/> и проведение замеров</span></li>
+                <li class="flow-step__step revealator-slideleft revealator-delay3 revealator-once"><span>Составление  <br/> сметы и договора</span></li>
+                <li class="flow-step__step revealator-slideleft revealator-delay1 revealator-once"><span>Выполнение <br/> работ</span></li>
+                <li class="flow-step__step revealator-slideleft revealator-delay2 revealator-once"><span>Составление акта <br/> выполненых работ</span></li>
+                <li class="flow-step__step revealator-slideleft revealator-delay3 revealator-once"><span>Сдача обекта <br/> и расчет</span></li>
+            </ul>
         </div>
     </section>
-    <section id="response" class="">
-        <div class="container container_content">
-            <h2 class="secondary-caption"><span>Как мы работаем</span></h2>
+    <section id="response" class="response section">
+        <div class="container container_content response__container">
+            <div class="response__callback cell">
+                <div class="finish-screen">
+                    <p class="finish-screen__caption finish-screen_caption_main">Спасибо за заявку</p>
+                    <p class="finish-screen__caption finish-screen_caption_secondary">Наши сотрудники свяжутся с Вами в ближайшее время и ответят на ваши вопросы</p>
+                    <button id="back-to-form" class="button finish-screen__button-back">Вернуться к форме</button>
+                </div>
+                <form class="form-callback" id="form-callback" >
+                    <legend class="form-callback__caption_main">Получение расчетной сметы</legend>
+                    <p class="form-callback__caption form-callback__caption_secondary">
+                        Укажите тип работ, который Вас интересует,</br>
+                        и мы подсчитаем Ваши затраты
+                    </p>
+                    <p class="form-callback__row">
+                        <label class="form-callback__label" for="name">Тип работ:</label>
+                        <select id="work" name="work" class="form-callback__input" value="Строительство">
+                            <option value="Строительство">Строительство</option>
+                            <option value="Электрика">Электрика</option>
+                            <option value="Ремонт">Ремонт</option>
+                            <option value="Кровля">Кровля</option>
+                            <option value="Благоустройство">Благоустройство</option>
+                            <option value="Абразивно-струйная обработка">Абразивно-струйная обработка</option>
+                            <option value="Отделка фасадов">Отделка фасадов</option>
+                            <option value="Внутренняя отделка">Внутренняя отделка</option>
+                            <option value="Сантехника и канализация">Сантехника и канализация</option>
+                        </select>
+                    </p>
+                    <p class="form-callback__row">
+                        <label class="form-callback__label" for="name">Ваше имя:</label>
+                        <input class="form-callback__input" id="name" name="name" value="" type="text" maxlength="50" required> 
+                    </p>
+                    <p class="form-callback__row">
+                        <label class="form-callback__label" for="phone">Ваш телефон:</label>
+                        <input class="form-callback__input" id="phone" name="phone" value="" type="text" required>
+                    </p>
+                    <button class="button form-callback__button form-callback__button_submit" value="Отправить" type="submit" id="button-submit">Получить смету</button>
+                </form>
+            </div>
+            <div class="response__description cell">
+                <p style="text-align: center;">
+                    Также вы можете написать нам в социальных сетях и мессенджерах
+                </p>
+                <ul class="response__socials socials">
+                    <li>
+                        <a href="https://t.me/zyndnnsmc" target="_blank" rel="nofollow" class="socials__item socials__item_tg">@HOUSEBERY</a>
+                    </li>
+                    <li>
+                        <a href="viber://chat?number=%2B375292847995" target="_blank" rel="nofollow" class="socials__item socials__item_viber">+375292847995</a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/375292847995" target="_blank" rel="nofollow" class="socials__item socials__item_whatsapp">+375292847995</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/houseberry.b/" rel="nofollow" target="_blank" class="socials__item socials__item_insta">houseberry.b</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="footer" class="footer">
+        <div class="container footer__container">
+            <img class="footer__logo logo logo_main" width="180" src="img/dest/main-logo.png" alt="HouseBerry"></img>
         </div>
     </section>
 
 	<!-- Подключаем скрипты проекта -->
-	<script src="js/app.min.js"></script>
+    <script src="js/app.min.js"></script>
+    <script src="js/fm.revealator.jquery.min.js"></script>
     <script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
     <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
     <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
     <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>

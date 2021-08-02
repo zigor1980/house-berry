@@ -1,0 +1,50 @@
+@import 'app/styles/variables';
+@import 'app/styles/mixins';
+
+.about {
+  &__container {
+    padding-bottom: 0;
+  }
+
+  &__description {
+    background-repeat: no-repeat;
+    // background-size: ;
+    background-position: left bottom;
+    background-size: 50%;
+    background-image: url('../img/dest/builder.png');
+    padding-left: 50%;
+
+    @media screen and (max-width: 900px) {
+      padding-left: 35%;
+      background-size: 35%;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding-left: 0;
+      background-image: none;
+    }
+
+    p {
+      padding: 20px;
+      line-height: 1.5;
+      text-align: justify;
+
+      &:not(:first-child) {
+        position: relative;
+        padding-top: 30px;
+
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%) rotate(45deg);
+          @include wh(10px);
+          background: $main-yellow;
+          box-shadow: 30px -30px 0 0 $main-yellow, -30px 30px 0 0 $main-yellow;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import 'app/styles/variables';
+
+.prices {
+    &__container {
+        text-align: center;
+    }
+
+    &__description {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .button--expand {
+        margin: 20px auto;
+    }
+
+    &__table {
+        margin: 15px auto;
+        width: 100%;
+
+        th {
+            font-family: 'RobotoBold';
+            background-color: $main-yellow;
+        }
+
+        td.type {
+            text-align: left;
+            font-family: 'RobotoBold';
+            background-color: #f0f0f0;
+        }
+
+        td, th {
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #000000;
+        }
+    }
+}

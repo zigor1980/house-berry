@@ -1,6 +1,13 @@
 @import 'app/styles/variables';
 @import 'app/styles/mixins';
 
+.examples {
+  background-image: url('../img/dest/prototype.jpg');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+}
+
 .examples-gallery {
   display: flex;
   flex-flow: row wrap;
@@ -71,9 +78,14 @@
   &__overlay {
     position: absolute;
     @include wh(100%);
-    background-color: rgba($color: $main-gray, $alpha: 0.5);
+    background-color: rgba($color: #000000, $alpha: 0.5);
     visibility: hidden;
     opacity: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: 15%;
+    background-position: center;
+    background-image: url('../img/dest/expand.png');
     transition-property: opacity visibility;
     transition-delay: 0.1s;
     transition-timing-function: linear;
@@ -84,6 +96,7 @@
   &__info {
     position: absolute;
     bottom: 0;
+    pointer-events: none;
     font-family: 'RobotoBold';
     font-size: 18px;
     left: 0;

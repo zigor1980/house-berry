@@ -68,8 +68,12 @@ function buildcopy() {
       // Выбираем нужные файлы
       'app/css/**/*.min.css',
       'app/js/**/*.min.js',
-      'app/images/dest/**/*',
+      'app/img/dest/**/*',
       'app/**/*.html',
+      'app/**/*.php',
+      'app/fonts/**/*',
+      'app/fancybox/**/*',
+      'app/slick/**/*',
     ],
     { base: 'app' },
   ) // Параметр "base" сохраняет структуру проекта при копировании
@@ -119,7 +123,7 @@ exports.images = images;
 exports.cleanimg = cleanimg;
 
 // Создаём новый таск "build", который последовательно выполняет нужные операции
-exports.build = series(cleandist, styles, scripts, images, buildcopy);
+exports.build = series(cleandist, styles, scripts, cleanimg, images, buildcopy);
 
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = parallel(styles, scripts, browsersync, startwatch);
+exports.default = parallel(styles, scripts, browsersync, images, startwatch);

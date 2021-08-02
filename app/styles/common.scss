@@ -1,4 +1,5 @@
 @import 'app/styles/variables';
+@import 'app/styles/mixins';
 
 .container {
   box-sizing: border-box;
@@ -11,20 +12,118 @@
   }
 }
 
+.phone-block {
+  text-align: right;
+
+  &__phone {
+    display: inline-block;
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+}
+
+.socials {
+  &__item {
+    display: inline-block;
+
+    margin: 0 5px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      @include wh(25px);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    &_tg {
+      &:before {
+        background-image: url('../img/dest/tg.png');
+      }
+    }
+
+    &_viber {
+      &:before {
+        background-image: url('../img/dest/viber.png');
+        background-size: 35px;
+      }
+    }
+
+    &_insta {
+      &:before {
+        background-image: url('../img/dest/insta.png');
+      }
+    }
+
+    &_whatsapp {
+      &:before {
+        background-image: url('../img/dest/whatsapp.png');
+        background-size: 50px;
+      }
+    }
+  }
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+  border-radius: 5px;
+  background: $main-yellow;
+  box-shadow: 0 2px 5px 0px $main-gray;
+  transition: box-shadow ease 0.3s;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-family: 'RobotoBold';
+
+  &:active {
+    box-shadow: none;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 12px;
+  }
+}
+
 .secondary-caption {
   text-align: center;
   margin-bottom: 30px;
+  position: relative;
 
-  @media screen and (max-width: 768px) {
-    margin-bottom: 15px;
+  &:after {
+    content: '';
+    display: block;
+    @include wh(80px, 3px);
+    margin: 10px auto;
+    background: $main-yellow;
   }
 
+  > a.anchor,
   > span {
     display: inline-block;
     padding: 5px;
+    text-decoration: none;
+    color: #000000;
+    cursor: default;
     font-family: 'RobotoBold';
-    font-size: 24px;
-    border-bottom: 1px solid $main-yellow;
+    font-size: 32px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 15px;
+
+    > span {
+      font-size: 24px;
+    }
   }
 }
 

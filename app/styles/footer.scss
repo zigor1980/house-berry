@@ -1,0 +1,71 @@
+@import 'app/styles/variables';
+@import 'app/styles/mixins';
+
+.footer {
+  //   border-top: 2px solid $main-gray;
+  //   //   box-shadow: 0 0 0 2px $main-yellow;
+  background: $main-yellow;
+
+  &__container {
+    background: #ffffff;
+    padding: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 80px;
+    height: 80px;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      height: 0;
+    }
+
+    &:before {
+      left: 0;
+      border-bottom: 80px solid $main-yellow;
+      border-right: 80px solid transparent;
+    }
+
+    &:after {
+      right: 0;
+      border-bottom: 80px solid $main-yellow;
+      border-left: 80px solid transparent;
+    }
+
+    @media screen and (max-width: 450px) {
+      height: 50px;
+
+      &:before {
+        left: 0;
+        border-bottom-width: 50px;
+        border-right-width: 50px;
+      }
+
+      &:after {
+        right: 0;
+        border-bottom-width: 50px;
+        border-left-width: 50px;
+      }
+
+      > img {
+        width: 100px;
+      }
+    }
+  }
+
+  &__year {
+    margin-top: 5px;
+    display: inline-block;
+    color: $main-gray;
+
+    @media screen and (max-width: 450px) {
+      font-size: 10px;
+    }
+  }
+}
